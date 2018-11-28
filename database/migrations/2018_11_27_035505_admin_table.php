@@ -9,9 +9,9 @@ class AdminTable extends Migration
     public function up(){
         Schema::create('admin', function (Blueprint $table) {
             $table->integer('id_admin')->autoIncrements();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('name', 150);
+            $table->string('email', 150)->unique();
+            $table->string('password', 150);
             $table->integer('status');
             $table->rememberToken();
             $table->timestamps();

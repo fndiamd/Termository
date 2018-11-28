@@ -9,7 +9,7 @@ class CategoryTable extends Migration{
     {
         Schema::create('category', function (Blueprint $table) {
             $table->integer('id_category')->autoIncrements();
-            $table->string('category');
+            $table->string('category', 100);
             $table->timestamps();
             $table->primary('id_category');
         });

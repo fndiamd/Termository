@@ -12,7 +12,7 @@ class OrderTable extends Migration
             $table->integer('id_feature');
             $table->integer('id_user');
             $table->dateTime('order_date');
-            $table->string('payment');
+            $table->string('payment', 100);
             $table->integer('status');
             $table->primary('id_order');
             $table->timestamps();

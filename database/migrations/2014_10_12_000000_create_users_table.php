@@ -11,6 +11,7 @@ class CreateUsersTable extends Migration
             $table->integer('id_user')->autoIncrements();
             $table->string('name', 150);
             $table->string('email', 150)->unique();
+            $table->integer('gender');
             $table->string('password', 150);
             $table->string('phone', 20);
             $table->string('hint', 50);
