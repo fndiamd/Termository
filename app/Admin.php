@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Model
 {
-    use Notifiable;
+    //use Notifiable;
     protected $table = 'admin';
     protected $fillable = [
         'name', 'email', 'password', 'status'
     ];
 
     protected $hidden = [
-        'password', 'remember_token',
+        
     ];
 }
