@@ -4,9 +4,11 @@
     });
 
     Route::group(['namespace' => 'Frontend'], function(){
-      Route::get('sign-in', 'LoginController@index');
-      Route::get('get-started', 'SignUpController@index');
-      Route::post('request-signup', 'SignUpController@requestSignup');
+
+        Route::get('sign-in', 'LoginController@showLoginForm');
+        Route::get('get-started', 'SignUpController@index');
+        Route::post('request-signup', 'SignUpController@requestSignup');
+        Route::post('request-signin', 'LoginController@login');
     });
 
     Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function(){
