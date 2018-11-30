@@ -12,7 +12,7 @@
     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
       <span class="mdi mdi-menu"></span>
     </button>
-    <ul class="navbar-nav d-none d-md-block">
+    <!-- <ul class="navbar-nav d-none d-md-block">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
           <i class="flag-icon flag-icon-us"></i>
@@ -69,9 +69,9 @@
           </a>
         </div>
       </li>
-    </ul>
+    </ul> -->
     <ul class="navbar-nav navbar-nav-right">
-      <li class="nav-item search-wrapper d-none d-md-block">
+      <!-- <li class="nav-item search-wrapper d-none d-md-block">
         <form action="#">
           <div class="form-group mb-0">
             <div class="input-group">
@@ -84,8 +84,8 @@
             </div>
           </div>
         </form>
-      </li>
-      <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
+      </li> -->
+      <!-- <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
         <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
           <div class="dropdown-toggle-wrapper">
             <div class="inner">
@@ -131,8 +131,8 @@
             Sign Out
           </a>
         </div>
-      </li>
-      <li class="nav-item dropdown">
+      </li> -->
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
           <i class="mdi mdi-bell-outline"></i>
           <span class="count">4</span>
@@ -240,10 +240,10 @@
             </div>
           </a>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item dropdown color-setting d-none d-md-block">
         <a class="nav-link count-indicator" href="#">
-          <i class="mdi mdi-invert-colors"></i>
+          <i class="menu-icon icon-logout"></i>
         </a>
       </li>
     </ul>
