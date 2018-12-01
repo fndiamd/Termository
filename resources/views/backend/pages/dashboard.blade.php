@@ -486,8 +486,8 @@
   </table>
 </div>
 <script>
-  $(document).ready( function () {
-      $('#myTable').DataTable();
-  });
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    });
 </script>
 @endsection

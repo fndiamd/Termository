@@ -1,11 +1,11 @@
 <!-- partial:partials/_navbar.html -->
 <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
   <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-    <a class="navbar-brand brand-logo" href="{{asset('backend/index.html')}}">
-      <img src="{{asset('backend/images/logo.svg')}}" alt="logo" />
+    <a class="navbar-brand brand-logo" href="{{url('admin')}}">
+      <h3 style="margin-top: 10px; padding: 10px;"> Termository </h3>
     </a>
-    <a class="navbar-brand brand-logo-mini" href="{{asset('backend/index.html')}}">
-      <img src="{{asset('backend/images/logo-mini.svg')}}" alt="logo" />
+    <a class="navbar-brand brand-logo-mini">
+      <img src="{{asset('backend/images/logo-mini.svg')}}" alt="logo"  href="{{url('admin')}}" />
     </a>
   </div>
   <div class="navbar-menu-wrapper d-flex align-items-center">
