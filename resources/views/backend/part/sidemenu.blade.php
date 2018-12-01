@@ -26,38 +26,66 @@
   <ul class="nav">
     <li class="nav-item nav-profile">
       <img src="{{asset('backend/images/faces/face1.jpg')}}" alt="profile image">
-      <p class="text-center font-weight-medium">Larry Garner</p>
+      <p class="text-center font-weight-medium">Admin Tamvan</p>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{asset('backend/index.html')}}">
+      <a class="nav-link" href="{{url('admin')}}">
         <i class="menu-icon icon-diamond"></i>
         <span class="menu-title">Dashboard</span>
-        <div class="badge badge-success">3</div>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/admin-view')}}">
+        <i class="menu-icon icon-lock"></i>
+        <span class="menu-title">Admin</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/user-view')}}">
+        <i class="menu-icon icon-user"></i>
+        <span class="menu-title">User</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/category-view')}}">
+        <i class="menu-icon icon-grid"></i>
+        <span class="menu-title">Category</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/file-view')}}">
+        <i class="menu-icon icon-folder"></i>
+        <span class="menu-title">File</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/order-view')}}">
+        <i class="menu-icon icon-basket"></i>
+        <span class="menu-title">Order</span>
       </a>
     </li>
     <li class="nav-item d-none d-md-block">
       <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
-        <i class="menu-icon icon-compass"></i>
-        <span class="menu-title">Page Layouts</span>
+        <i class="menu-icon icon-notebook"></i>
+        <span class="menu-title">Log</span>
       </a>
       <div class="collapse" id="page-layouts">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
-            <a class="nav-link" href="pages/layout/boxed-layout.html')}}">Boxed</a>
+            <a class="nav-link" href="{{url('admin/log-download-view')}}">Log Download</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/layout/rtl-layout.html')}}">RTL</a>
+            <a class="nav-link" href="{{url('admin/log-view-view')}}">Log View</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/layout/horizontal-menu.html')}}">Horizontal Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/layout/horizontal-menu-2.html')}}">Horizontal Menu 2</a>
-          </li>
-        </ul>
       </div>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/fitur-view')}}">
+        <i class="menu-icon icon-layers"></i>
+        <span class="menu-title">Fitur</span>
+      </a>
+    </li>
+    <!-- <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#apps-dropdown" aria-expanded="false" aria-controls="apps-dropdown">
         <i class="menu-icon icon-settings"></i>
         <span class="menu-title">Apps</span>
@@ -438,7 +466,7 @@
         <i class="menu-icon icon-docs"></i>
         <span class="menu-title">Documentation</span>
       </a>
-    </li>
+    </li> -->
   </ul>
 </nav>
 <!-- partial -->
