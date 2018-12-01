@@ -119,8 +119,7 @@
 </div>
 <!-- Back to scroll  -->
 <!--All Jquery Library Files -->
-<script src="{{ asset('js/vendor/jquery-3.3.1.min.js') }}"></script>
-<!-- jquery.easing.min js  -->
+<script src="{{ asset('js/sweetalert2.min.js') }}"></script>
 <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
 <!-- Bootstrap js  -->
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -132,3 +131,28 @@
 <script src="{{ asset('js/tab.js') }}"></script>
 <!-- main Js -->
 <script src="{{ asset('js/main.js') }}"></script>
+@if (session('notify'))
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.notify({
+                title: "<strong>{{ session('notify')['title'] }}</strong> ",
+                message: "{{ session('notify')['msg'] }}",
+            },{
+                type: "{{ session('notify')['type'] }}",
+                placement: {
+                    from: "top",
+                    align: "right",
+                },
+            });
+        });
+    </script>
+@endif
+@if(session('sweet-alert'))
+    <script>
+        swal({
+            type : "{{ session('sweet-alert')['type'] }}",
+            title : "{{ session('sweet-alert')['title'] }}",
+            text : "{{ session('sweet-alert')['text'] }}"
+        });
+    </script>
+@endif

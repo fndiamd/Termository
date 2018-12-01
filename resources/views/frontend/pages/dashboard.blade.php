@@ -15,11 +15,10 @@
                 alteration in some form.</p>
                 <div class="trial-form">
                 <form>
-                    <input type="text" class="form-control" name="trial" placeholder="Enter yoru Email" required="required">
-                    <button type="button" class="btn hvr-sweep-to-blue btn-utrun btn-primary">FREE TRIAL <i class="flaticon-next"></i></button>
+                    <input type="text" class="form-control" name="trial" placeholder="Search files in here" required="required">
+                    <button type="button" class="btn hvr-sweep-to-blue btn-utrun btn-primary">SEARCH FILES<i class="flaticon-next"></i></button>
                 </form>
                 </div>
-                <p class="small-pra">*No Credit Card Required. Free for 14 Days!</p>
             </div>
             </div>
             <!-- End Col -->

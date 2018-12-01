@@ -8,10 +8,9 @@ class CategoryTable extends Migration{
     public function up()
     {
         Schema::create('category', function (Blueprint $table) {
-            $table->integer('id_category')->autoIncrements();
+            $table->integer('id_category')->autoIncrement();
             $table->string('category', 100);
             $table->timestamps();
-            $table->primary('id_category');
         });
     }
 

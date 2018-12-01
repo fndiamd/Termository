@@ -8,13 +8,12 @@ class FeatureTable extends Migration
 {
     public function up(){
         Schema::create('feature', function(Blueprint $table){
-            $table->integer('id_feature')->autoIncrements();
+            $table->integer('id_feature')->autoIncrement();
             $table->string('title', 150);
             $table->float('price', 10, 2);
             $table->float('available_storage', 12, 2);
             $table->text('description');
             $table->timestamps();
-            $table->primary('id_feature');
         });
     }
 

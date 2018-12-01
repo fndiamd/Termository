@@ -16,7 +16,10 @@
         <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet" media="screen">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
+        <script src="{{ asset('js/vendor/jquery-3.3.1.min.js') }}"></script>
         <script src="{{ asset('js/vendor/modernizr-3.6.0.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-notify.min.js') }}"></script>
     </head>
     <body>
         @include('frontend.part.header')

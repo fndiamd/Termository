@@ -10,14 +10,25 @@
                     <div class="card card-signin my-5">
                         <div class="card-body">
                             <h5 class="card-title text-center">Sign In</h5>
-                            <form class="form-signin" method="post" action="{{ url('') }}">
+                            <form class="form-signin" method="post" action="{{ url('request-signin') }}">
+                                @csrf
                                 <div class="form-label-group">
                                     <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus name="email">
                                     <label for="inputEmail">Email address</label>
+                                    @value($errors->first('email'))
+                                        <small class="text-danger">
+                                            {{ $errors->first('email') }}
+                                        </small>
+                                    @endvalue
                                 </div>
                                 <div class="form-label-group">
                                     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
                                     <label for="inputPassword">Password</label>
+                                    @value($errors->first('password'))
+                                        <small class="text-danger">
+                                            {{ $errors->first('password') }}
+                                        </small>
+                                    @endvalue
                                 </div>
                                 <div class="custom-control custom-checkbox mb-3">
                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -30,8 +41,6 @@
                                 <div class="form-label-group">
                                     New to Termository ? <a href="{{ url('/get-started') }}" class="text-blue">Create an account</a>
                                 </div>
-                                <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
-                                <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
                             </form>
                         </div>
                     </div>

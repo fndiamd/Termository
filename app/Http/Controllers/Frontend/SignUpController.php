@@ -56,13 +56,17 @@ class SignUpController extends Controller{
             'name' => $req->firstName." ".$req->lastName,
             'email' => $req->email,
             'gender' => $req->gender,
-            'password' => $req->password,
+            'password' => \Hash::make($req->password),
             'phone' => $req->phone,
             'hint' => $req->hint,
             'used_storage' => 0,
             'status' => 0
         ]);
 
-        return redirect('/get-started');
+        return redirect('/get-started')->withInput()->with('notify', [
+            'title' => 'Yay!',
+            'type' => 'success',
+            'msg' => 'Pendaftaran berhasil',
+        ]);
     }
 }

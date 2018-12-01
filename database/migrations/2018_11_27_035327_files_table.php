@@ -8,7 +8,7 @@ class FilesTable extends Migration
 {
     public function up(){
         Schema::create('files', function (Blueprint $table){
-            $table->integer('id_file')->autoIncrements();
+            $table->integer('id_file')->autoIncrement();
             $table->integer('id_category');
             $table->integer('id_user');
             $table->string('title', 200);
@@ -19,7 +19,6 @@ class FilesTable extends Migration
             $table->integer('flag');
             $table->integer('status');
             $table->timestamps();
-            $table->primary('id_file');
         });
     }
 
