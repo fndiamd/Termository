@@ -264,7 +264,7 @@ img{max-width: 100%;display: block;}
 }
 /*Sticky header css*/
 header#header-top nav.sticky-opnen {
-  background-color: rgba(71, 119, 244, 70%);
+  background-color: rgb(71, 119, 244);
   padding: 15px; 
   -webkit-animation: 300ms ease-in-out;
     animation: 300ms ease-in-out;
@@ -318,7 +318,7 @@ header#header-top nav.sticky-opnen a.logo-light{display: block;-moz-transition: 
   background-color: #4777f4;
   color: #fff !important;
 }
-#header-top nav div.main-menu ul.navbar-nav li.nav-item a:hover{ color: #4777f4 !important;}
+#header-top nav div.main-menu ul.navbar-nav li.nav-item a:hover{ color: #666666 !important;}
 /*Blog Nav Bar*/
 .navbar-gray{background: #f4f5ff}
 
@@ -1458,6 +1458,7 @@ margin-top: 15px
   min-height: 50vh;
   border-top:1px solid #DDD;
   padding-top:30px;
+  padding-bottom:30px;
 }
 
 .begin-section-2{

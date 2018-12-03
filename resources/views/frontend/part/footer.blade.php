@@ -7,7 +7,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="footer-widget-info">
                 <div class="footer-logo">
-                <img src="{{ asset('images/normal/logo.png') }}" alt="Footer Logo">
+                <img src="{{ asset('images/normal/termository-blue.png') }}" alt="Footer Logo">
                 </div>
                 <div class="widget-info">
                 <p>Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec
@@ -113,46 +113,49 @@
 
 <!-- Back to scroll  -->
 <div class="top-arrow">
-    <span class="scroll-top-top">
-    <i class="fas fa-arrow-up"></i>
-    </span>
-</div>
-<!-- Back to scroll  -->
-<!--All Jquery Library Files -->
-<script src="{{ asset('js/sweetalert2.min.js') }}"></script>
-<script src="{{ asset('js/jquery.easing.min.js') }}"></script>
-<!-- Bootstrap js  -->
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<!-- Carousel js  -->
-<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-<!-- aos Js -->
-<script src="{{ asset('js/aos.js') }}"></script>
-<!-- tab Js -->
-<script src="{{ asset('js/tab.js') }}"></script>
-<!-- main Js -->
-<script src="{{ asset('js/main.js') }}"></script>
-@if (session('notify'))
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $.notify({
-                title: "<strong>{{ session('notify')['title'] }}</strong> ",
-                message: "{{ session('notify')['msg'] }}",
-            },{
-                type: "{{ session('notify')['type'] }}",
-                placement: {
-                    from: "top",
-                    align: "right",
-                },
-            });
-        });
-    </script>
-@endif
-@if(session('sweet-alert'))
-    <script>
-        swal({
-            type : "{{ session('sweet-alert')['type'] }}",
-            title : "{{ session('sweet-alert')['title'] }}",
-            text : "{{ session('sweet-alert')['text'] }}"
-        });
-    </script>
-@endif
+            <span class="scroll-top-top">
+            <i class="fas fa-arrow-up"></i>
+            </span>
+        </div>
+        <!-- Back to scroll  -->
+        <!--All Jquery Library Files -->
+        <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
+        <!-- Bootstrap js  -->
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/dropzone.js') }}"></script>
+        <!-- Carousel js  -->
+        <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+        <!-- aos Js -->
+        <script src="{{ asset('js/aos.js') }}"></script>
+        <!-- tab Js -->
+        <script src="{{ asset('js/tab.js') }}"></script>
+        <!-- main Js -->
+        <script src="{{ asset('js/main.js') }}"></script>
+        @if (session('notify'))
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $.notify({
+                        title: "<strong>{{ session('notify')['title'] }}</strong> ",
+                        message: "{{ session('notify')['msg'] }}",
+                    },{
+                        type: "{{ session('notify')['type'] }}",
+                        placement: {
+                            from: "top",
+                            align: "right",
+                        },
+                    });
+                });
+            </script>
+        @endif
+        @if(session('sweet-alert'))
+            <script>
+                swal({
+                    type : "{{ session('sweet-alert')['type'] }}",
+                    title : "{{ session('sweet-alert')['title'] }}",
+                    text : "{{ session('sweet-alert')['text'] }}"
+                });
+            </script>
+        @endif
+    </body>
+</html>

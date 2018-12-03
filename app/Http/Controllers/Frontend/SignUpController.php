@@ -53,7 +53,8 @@ class SignUpController extends Controller{
         ])->validate();
 
         User::create([
-            'name' => $req->firstName." ".$req->lastName,
+            'first_name' => $req->firstName,
+            'last_name' => $req->lastName,
             'email' => $req->email,
             'gender' => $req->gender,
             'password' => \Hash::make($req->password),

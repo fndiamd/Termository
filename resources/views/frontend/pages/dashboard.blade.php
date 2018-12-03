@@ -1,4 +1,4 @@
-@extends('frontend.index')
+@extends('frontend.layouts.master')
 @section('title')
     Termository | Best way to save and publish your files.
 @endsection

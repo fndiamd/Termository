@@ -40,9 +40,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
         'admin' => [
             'driver' => 'session',
-            'provider' => 'admin'
+            'provider' => 'admin',
         ],
         'api' => [
             'driver' => 'token',

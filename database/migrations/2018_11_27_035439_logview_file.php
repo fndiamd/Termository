@@ -15,6 +15,6 @@ class LogviewFile extends Migration
     }
 
     public function down(){
-        Schema::dropIfExits('log_view_file');
+        Schema::dropIfExists('log_view_file');
     }
 }
