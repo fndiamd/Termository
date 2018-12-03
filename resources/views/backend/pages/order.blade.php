@@ -17,6 +17,21 @@
       </thead>
   </table>
 </div>
+<div>
+  <table id="formOrder" class="table table-striped table-bordered" style="align=center;">
+    <tr>
+      <h3> Test ini form </h3>
+      <form>
+      
+      </form>
+    </tr>
+    <tr>
+      <td><button id="createOrder">Create</button></td>
+      <td><button id="updateOrder">Update</button></td>
+      <td><button id="deleteOrder">Delete</button></td>
+    </tr>
+  </table>
+</div>
 <script>
   $(document).ready( function () {
       $('#myTable').DataTable();
