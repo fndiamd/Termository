@@ -4,11 +4,28 @@
     });
 
     Route::group(['namespace' => 'Frontend'], function(){
-        Route::get('sign-in', 'LoginController@showLoginForm');
         Route::get('get-started', 'SignUpController@index');
         Route::post('request-signup', 'SignUpController@requestSignup');
-        Route::post('request-signin', 'LoginController@login');
+        Route::get('explore-files', 'FilesController@explore');
+        
+        Route::group(['middleware' => 'guest'], function(){
+          Route::get('sign-in', 'Auth\LoginController@showLoginForm');
+          Route::post('request-signin', 'Auth\LoginController@login');
+        });
+
+        Route::get('profile', 'ProfileController@index')->middleware('auth');
+
+        Route::group(['middleware' => 'auth', 'prefix' => 'profile'], function(){
+          Route::get('logout', 'Auth\LoginController@logout');
+          Route::get('settings', 'ProfileController@viewSetting');
+          Route::post('settings', 'ProfileController@setting');
+        });
     });
+
+    // Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function(){
+    //   Route::get('login', 'Auth\LoginController@showLoginForm');
+    //   Route::post('request-login', 'Auth\LoginController@login');
+    // });
 
     Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function(){
         Route::get('/', 'RouterController@index');

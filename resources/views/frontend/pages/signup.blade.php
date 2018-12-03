@@ -1,4 +1,4 @@
-@extends('frontend.index')
+@extends('frontend.layouts.master')
 @section('title')
     Get started Termository
 @endsection

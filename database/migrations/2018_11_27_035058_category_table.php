@@ -10,6 +10,7 @@ class CategoryTable extends Migration{
         Schema::create('category', function (Blueprint $table) {
             $table->integer('id_category')->autoIncrement();
             $table->string('category', 100);
+            $table->string('faicon', 30);
             $table->timestamps();
         });
     }

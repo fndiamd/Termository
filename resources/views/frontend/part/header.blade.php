@@ -35,7 +35,7 @@
             <li class="nav-item">
                 <a class="nav-link utrun-scroll" href="{{ url('/#contact-section') }}">contact</a>
             </li>
-            @if(Auth::guest())
+            @if(Auth::guest('user'))
             <li class="nav-item">
                 <a class="nav-link utrun-scroll" href="{{ url('sign-in') }}">Sign In</a>
             </li>
@@ -44,7 +44,9 @@
             </li>
             @else
             <li class="nav-item">
-                <a class="nav-link utrun-scroll" href="{{ url('profile') }}">{{ Auth::user()->name }}</a>
+                <a class="nav-link utrun-scroll" href="{{ url('profile') }}">
+                    My Profile
+                </a>
             </li>
             @endif
         </ul>
