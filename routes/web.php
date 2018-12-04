@@ -29,7 +29,6 @@
 
     Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function(){
         Route::get('/', 'RouterController@index');
-<<<<<<< HEAD
         //Admin
         Route::get('admin-view', 'RouterController@adminView');
         //User
@@ -61,40 +60,6 @@
         Route::get('log-view-view', 'RouterController@logViewView');
         //Fitur
         Route::get('fitur-view', 'RouterController@fiturView');
-=======
-        // admin get
-        Route::get('admin-view', 'AdminController@index');
-        Route::get('admin-createView', 'AdminController@createView');
-        Route::get('admin-updateView/{id}', 'AdminController@updateView');
-        // admin post
-        Route::post('admin-create', 'AdminController@create');
-        Route::post('admin-delete/{id}', 'AdminController@delete');
-        Route::post('admin-update', 'AdminController@update');
-
-        // category get
-        Route::get('category-view', 'CategoryController@index');
-        Route::get('category-createView', 'CategoryController@createView');
-        Route::get('category-updateView/{id}', 'CategoryController@updateView');
-        // category post
-        Route::post('category-create', 'CategoryController@create');
-        Route::post('category-delete/{id}', 'CategoryController@delete');
-        Route::post('category-update', 'CategoryController@update');
-
-        // fitur get
-        Route::get('fitur-view', 'FiturController@index');
-        Route::get('fitur-createView', 'FiturController@createView');
-        Route::get('fitu-updateView/{id}', 'FiturController@updateView');
-        // category post
-        Route::post('fitur-create', 'FiturController@create');
-        Route::post('fitur-delete/{id}', 'FiturController@delete');
-        Route::post('fitur-update', 'FiturController@update');
-
-        Route::get('user-view', 'RouterController@userView');
-        Route::get('file-view', 'RouterController@fileView');
-        Route::get('order-view', 'RouterController@orderView');
-        Route::get('log-download-view', 'RouterController@logDownloadView');
-        Route::get('log-view-view', 'RouterController@logViewView');
->>>>>>> 175b9df9c6ea4f96f7c3030c7ab1d14fe1054312
     });
 
 ?>
