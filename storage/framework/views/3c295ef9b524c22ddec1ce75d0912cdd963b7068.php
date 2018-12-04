@@ -7,7 +7,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="footer-widget-info">
                 <div class="footer-logo">
-                <img src="<?php echo e(asset('images/normal/logo.png')); ?>" alt="Footer Logo">
+                <img src="<?php echo e(asset('images/normal/termository-blue.png')); ?>" alt="Footer Logo">
                 </div>
                 <div class="widget-info">
                 <p>Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec
@@ -113,46 +113,49 @@
 
 <!-- Back to scroll  -->
 <div class="top-arrow">
-    <span class="scroll-top-top">
-    <i class="fas fa-arrow-up"></i>
-    </span>
-</div>
-<!-- Back to scroll  -->
-<!--All Jquery Library Files -->
-<script src="<?php echo e(asset('js/sweetalert2.min.js')); ?>"></script>
-<script src="<?php echo e(asset('js/jquery.easing.min.js')); ?>"></script>
-<!-- Bootstrap js  -->
-<script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
-<!-- Carousel js  -->
-<script src="<?php echo e(asset('js/owl.carousel.min.js')); ?>"></script>
-<!-- aos Js -->
-<script src="<?php echo e(asset('js/aos.js')); ?>"></script>
-<!-- tab Js -->
-<script src="<?php echo e(asset('js/tab.js')); ?>"></script>
-<!-- main Js -->
-<script src="<?php echo e(asset('js/main.js')); ?>"></script>
-<?php if(session('notify')): ?>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $.notify({
-                title: "<strong><?php echo e(session('notify')['title']); ?></strong> ",
-                message: "<?php echo e(session('notify')['msg']); ?>",
-            },{
-                type: "<?php echo e(session('notify')['type']); ?>",
-                placement: {
-                    from: "top",
-                    align: "right",
-                },
-            });
-        });
-    </script>
-<?php endif; ?>
-<?php if(session('sweet-alert')): ?>
-    <script>
-        swal({
-            type : "<?php echo e(session('sweet-alert')['type']); ?>",
-            title : "<?php echo e(session('sweet-alert')['title']); ?>",
-            text : "<?php echo e(session('sweet-alert')['text']); ?>"
-        });
-    </script>
-<?php endif; ?>
+            <span class="scroll-top-top">
+            <i class="fas fa-arrow-up"></i>
+            </span>
+        </div>
+        <!-- Back to scroll  -->
+        <!--All Jquery Library Files -->
+        <script src="<?php echo e(asset('js/sweetalert2.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/jquery.easing.min.js')); ?>"></script>
+        <!-- Bootstrap js  -->
+        <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/dropzone.js')); ?>"></script>
+        <!-- Carousel js  -->
+        <script src="<?php echo e(asset('js/owl.carousel.min.js')); ?>"></script>
+        <!-- aos Js -->
+        <script src="<?php echo e(asset('js/aos.js')); ?>"></script>
+        <!-- tab Js -->
+        <script src="<?php echo e(asset('js/tab.js')); ?>"></script>
+        <!-- main Js -->
+        <script src="<?php echo e(asset('js/main.js')); ?>"></script>
+        <?php if(session('notify')): ?>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $.notify({
+                        title: "<strong><?php echo e(session('notify')['title']); ?></strong> ",
+                        message: "<?php echo e(session('notify')['msg']); ?>",
+                    },{
+                        type: "<?php echo e(session('notify')['type']); ?>",
+                        placement: {
+                            from: "top",
+                            align: "right",
+                        },
+                    });
+                });
+            </script>
+        <?php endif; ?>
+        <?php if(session('sweet-alert')): ?>
+            <script>
+                swal({
+                    type : "<?php echo e(session('sweet-alert')['type']); ?>",
+                    title : "<?php echo e(session('sweet-alert')['title']); ?>",
+                    text : "<?php echo e(session('sweet-alert')['text']); ?>"
+                });
+            </script>
+        <?php endif; ?>
+    </body>
+</html>

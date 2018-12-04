@@ -1,10 +1,9 @@
-@extends('backend.index')
-@section('title')
+<?php $__env->startSection('title'); ?>
   User
-@endsection
-@section('content')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
 <div class="container">
-  <a href="{{ url('/admin/user-create') }}"><button type="submit" class="btn btn-primary mb-2"> Create User </button></a>
+  <a href="<?php echo e(url('/admin/user-create')); ?>"><button type="submit" class="btn btn-primary mb-2"> Create User </button></a>
   <table id="myTable" class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -30,10 +29,10 @@
           <td>  </td>
           <td>  </td>
           <td>
-            <a class="btn btn-warning" href="{{url('/admin/user-update/contohId')}}">
+            <a class="btn btn-warning" href="<?php echo e(url('/admin/user-update/contohId')); ?>">
               <i class="icon-pencil"></i> Update 
             </a>
-            <a class="btn btn-danger" href="{{url('/admin/user-delete/contohId')}}">
+            <a class="btn btn-danger" href="<?php echo e(url('/admin/user-delete/contohId')); ?>">
               <i class="icon-pencil"></i> Delete 
             </a>
           </td>
@@ -46,4 +45,5 @@
       $('#myTable').DataTable();
   });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.index', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

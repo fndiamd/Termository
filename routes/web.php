@@ -29,13 +29,36 @@
 
     Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function(){
         Route::get('/', 'RouterController@index');
+        //Admin
         Route::get('admin-view', 'RouterController@adminView');
-        Route::get('user-view', 'RouterController@userView');
+        //User
+        Route::get('user-view', 'UserController@index');
+        Route::get('user-createView', 'UserController@createView');
+        Route::get('user-create', 'UserController@create');
+        Route::get('user-updateView', 'UserController@updateView');
+        Route::get('user-update', 'UserController@update');
+        Route::get('user-delete', 'UserController@delete');
+        //Category
         Route::get('category-view', 'RouterController@categoryView');
-        Route::get('file-view', 'RouterController@fileView');
-        Route::get('order-view', 'RouterController@orderView');
+        //File
+        Route::get('file-view', 'FileController@index');
+        Route::get('file-createView', 'FileController@createView');
+        Route::get('file-create', 'FileController@create');
+        Route::get('file-updateView', 'FileController@updateView');
+        Route::get('file-update', 'FileController@update');
+        Route::get('file-delete', 'FileController@delete');
+        //Order
+        Route::get('order-view', 'OrderController@index');
+        Route::get('order-createView', 'OrderController@createView');
+        Route::get('order-create', 'OrderController@create');
+        Route::get('order-updateView',  'OrderController@updateView');
+        Route::get('order-update', 'OrderController@update');
+        Route::get('order-deleteView', 'OrderController@deleteView');
+        Route::get('order-delete', 'OrderController@delete');
+        //Log
         Route::get('log-download-view', 'RouterController@logDownloadView');
         Route::get('log-view-view', 'RouterController@logViewView');
+        //Fitur
         Route::get('fitur-view', 'RouterController@fiturView');
     });
 

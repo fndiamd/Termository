@@ -1,8 +1,8 @@
-@extends('backend.index') 
-@section('title') 
-    User Create 
-@endsection 
-@section('content') 
+ 
+<?php $__env->startSection('title'); ?> 
+    Order Create 
+<?php $__env->stopSection(); ?> 
+<?php $__env->startSection('content'); ?> 
     <form> 
         <div class="form-row"> 
             <div class="form-group col-md-6"> 
@@ -49,4 +49,5 @@
         </div> 
         <button type="submit" class="btn btn-primary">Sign in</button> 
     </form> 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.index', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

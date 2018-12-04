@@ -35,7 +35,7 @@
             <li class="nav-item">
                 <a class="nav-link utrun-scroll" href="<?php echo e(url('/#contact-section')); ?>">contact</a>
             </li>
-            <?php if(Auth::guest()): ?>
+            <?php if(Auth::guest('user')): ?>
             <li class="nav-item">
                 <a class="nav-link utrun-scroll" href="<?php echo e(url('sign-in')); ?>">Sign In</a>
             </li>
@@ -44,7 +44,9 @@
             </li>
             <?php else: ?>
             <li class="nav-item">
-                <a class="nav-link utrun-scroll" href="<?php echo e(url('profile')); ?>"><?php echo e(Auth::user()->name); ?></a>
+                <a class="nav-link utrun-scroll" href="<?php echo e(url('profile')); ?>">
+                    My Profile
+                </a>
             </li>
             <?php endif; ?>
         </ul>
