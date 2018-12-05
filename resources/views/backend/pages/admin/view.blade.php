@@ -3,9 +3,11 @@
   Admin
 @endsection
 @section('content')
-<a href="{{url('admin/admin-createView')}}"><button type="button" class="btn btn-primary">Add Admin</button></a><br><br>
+<a href="{{url('admin/admin-createView')}}">
+  <button type="button" class="btn btn-primary" style="margin-left: 248px"> Add Admin </button>
+</a><br><br>
 <div class="container">
-  <table id="myTable" class="table table-striped table-bordered">
+  <table id="adminView" class="table table-striped table-bordered">
     <thead>
       <tr>
         <th>Id</th>
@@ -22,8 +24,16 @@
         <td>fauzimakarim123@gmail.com</td>
         <td>Tuna Asmara</td>
         <td>
-          <a href="#"><button class="btn btn-warning" name="button"><i class="menu-icon icon-pencil"></i>Update</button></a>
-          <a href="#"><button class="btn btn-danger" name="button"><i class="menu-icon icon-trash"></i>Delete</button></a>
+          <a href="{{url('/admin/admin-updateView/{id}')}}">
+            <button class="btn btn-warning" name="button" style="padding: 8px">
+              <i class="menu-icon icon-pencil"></i>Update
+            </button>
+          </a>
+          <a href="{{url('/admin/admin-delete/{id}')}}">
+            <button class="btn btn-danger" name="button" style=" padding: 8px; margin-left: 5px">
+              <i class="menu-icon icon-trash"></i>Delete
+            </button>
+          </a>
         </td>
       </tr>
     </tbody>
@@ -40,7 +50,7 @@
 </div>
 <script>
   $(document).ready( function () {
-      $('#myTable').DataTable();
+      $('#adminView').DataTable();
   });
 </script>
 @endsection

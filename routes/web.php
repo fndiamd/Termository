@@ -50,9 +50,9 @@
         Route::post('category-update', 'CategoryController@update');
 
         //fitur get
-        Route::get('fitur-view', 'CategoryController@index');
-        ROute::get('fitur-createView', 'CategoryController@createView');
-        Route::get('fitur-updateView/{id}', 'CategoryController@updateView');
+        Route::get('fitur-view', 'FiturController@index');
+        ROute::get('fitur-createView', 'FiturController@createView');
+        Route::get('fitur-updateView/{id}', 'FiturController@updateView');
 
         // fitur post
         Route::post('fitur-create', 'FiturController@create');
@@ -82,12 +82,6 @@
         //Order get
         Route::get('order-view', 'OrderController@index');
         Route::get('order-createView', 'OrderController@createView');
-<<<<<<< HEAD
-        Route::get('order-create', 'OrderController@create');
-        Route::get('order-updateView',  'OrderController@updateView');
-        Route::get('order-update', 'OrderController@update');
-        Route::get('order-delete', 'OrderController@delete');
-=======
         Route::get('order-updateView/{id}',  'OrderController@updateView');
 
         //Order Post
@@ -95,7 +89,6 @@
         Route::post('order-update', 'OrderController@update');
         Route::post('order-delete/{id}', 'OrderController@delete');
 
->>>>>>> 44166296862f2a7b7bdb18ce500b00cb9d975a50
         //Log
         Route::get('log-download-view', 'RouterController@logDownloadView');
         Route::get('log-view-view', 'RouterController@logViewView');

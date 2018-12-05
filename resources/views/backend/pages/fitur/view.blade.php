@@ -23,8 +23,8 @@
       <td>100TB</td>
       <td>ah ah ah ah ah</td>
       <td>
-        <a href="#"><button class="btn btn-warning" name="button"><i class="menu-icon icon-pencil"></i>Update</button></a>
-        <a href="#"><button class="btn btn-danger" name="button"><i class="menu-icon icon-trash"></i>Delete</button></a>
+        <a href="{{url('/admin/fitur-updateView/{id}')}}"><button class="btn btn-warning" name="button" style="padding: 8px"><i class="menu-icon icon-pencil"></i>Update</button></a>
+        <a href="{{url('/admin/fitur-delete/{id}')}}"><button class="btn btn-danger" name="button" style="padding: 8px; margin-left: 5px"><i class="menu-icon icon-trash"></i>Delete</button></a>
       </td>
     </tbody>
     <tfoot>

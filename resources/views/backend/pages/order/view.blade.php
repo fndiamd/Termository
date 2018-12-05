@@ -1,11 +1,8 @@
 @extends('backend.index')
 @section('title')
-  Admin
+  Order
 @endsection
 @section('content')
-<a href="{{url('admin/admin-createView')}}">
-  <button type="button" class="btn btn-primary" style=" margin-left: 248px"> Create Order </button>
-</a><br><br>
 <div class="container">
   <table id="orderView" class="table table-striped table-bordered">
     <thead>
@@ -28,15 +25,11 @@
         <td> </td>
         <td> </td>
         <td>
-          <a href="{{url('/admin/order-update/contohId')}}">
-            <button class="btn btn-warning" name="button" style=" padding: 8px ">
-              <i class="menu-icon icon-pencil"></i> Update
+          <a href="{{url('/admin/order-updateView/{id}')}}">
+            <button class="btn btn-primary" name="button" style="padding: 8px">
+              <i class="menu-icon icon-magnifier"></i> Detail
             </button>
           </a>
-          <a href="{{url('/admin/order-delete/contohId')}}">
-            <button class="btn btn-danger" name="button" style=" padding: 8px; margin-left: 5px">
-              <i class="menu-icon icon-trash"></i> Delete
-            </button>
           </a>
         </td>
       </tr>
