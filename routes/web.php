@@ -53,7 +53,6 @@
         Route::get('order-create', 'OrderController@create');
         Route::get('order-updateView',  'OrderController@updateView');
         Route::get('order-update', 'OrderController@update');
-        Route::get('order-deleteView', 'OrderController@deleteView');
         Route::get('order-delete', 'OrderController@delete');
         //Log
         Route::get('log-download-view', 'RouterController@logDownloadView');
