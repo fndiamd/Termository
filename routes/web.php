@@ -37,7 +37,7 @@
         // Admin post
         Route::post('admin-create', 'AdminController@create');
         ROute::post('admin-delete/{id}', 'AdminController@delete');
-        Route::post('admin-update', 'AdminController@update');
+        Route::post('admin-update/{id}', 'AdminController@update');
 
         //Category get
         Route::get('category-view', 'CategoryController@index');

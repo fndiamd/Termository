@@ -3,21 +3,22 @@
   Update Admin
 @endsection
 @section('content')
-<form>
+<form action="{{ url('admin/admin-update/{id}')}}" method="post">
+  @csrf
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputName4">Username</label>
-      <input type="name" class="form-control" id="inputEmail4" placeholder="Username">
+      <input type="text" class="form-control" name="name" id="inputEmail4" placeholder="Username">
     </div>
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputPassword4" placeholder="Email">
+      <input type="text" class="form-control" name="email" id="inputPassword4" placeholder="Email">
     </div>
   </div>
   <div class="from-row">
     <div class="form-group">
       <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <input type="password" class="form-control" name="password" id="inputPassword4" placeholder="Password">
     </div>
     <div class="form-group">
       <label for="inputPassword4">Re-Type Password</label>
