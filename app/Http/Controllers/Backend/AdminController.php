@@ -7,14 +7,17 @@ use Validator;
 
 class AdminController extends Controller{
     public function index(){
-      return view('backend.pages.admin.view');
+      $admins = Admin::all()->toArray();
+      return view('backend.pages.admin.view', compact('admins'));
     }
+
     public function createView(){
       return view('backend.pages.admin.create');
     }
 
     public function updateView($id){
-      return view('backend.pages.admin.update', $data);
+      $admins = Admin::find($id);
+      return view('backend.pages.admin.update', compact('admins'));
     }
 
     public function create(Request $req){
@@ -24,31 +27,22 @@ class AdminController extends Controller{
           'password'
       ]);
       Validator::make($data, [
-          //definisi rules
           'name' => 'required|alpha_spaces',
-          'email' => 'email|required|unique:users',
+          'email' => 'email|required|unique:admin',
           'password' => 'required|min:8',
-      ],[
-          'name.required' => 'First name tidak boleh kosong.',
-          'name.alpha_spaces' => 'First name hanya boleh berisi abjad dan space',
-          'email.email' => 'E-mail harus valid',
-          'email.required' => 'E-mail tidak boleh kosong',
-          'email:unique' => 'E-mail sudah pernah digunakan',
-          'password.required' => 'Password tidak boleh kosong',
-          'password.min' => 'Password minimal 8 karakter',
       ])->validate();
 
       Admin::create([
           'name' => $req->name,
           'email' => $req->email,
           'password' => $req->password,
-          'status' => "1"
+          'status' => 1
       ]);
-        echo "data berhasil ditambah";
+      return redirect(url('admin/admin-view'));
     }
 
     public function update(Request $req, $id){
-      $datalama = Admin::where('id_admin',$id);
+      $datalama = Admin::find($id);
       $databaru = $req->only([
           'name',
           'email',
@@ -56,26 +50,22 @@ class AdminController extends Controller{
       ]);
 
       Validator::make($databaru, [
-          //definisi rules
           'name' => 'required|alpha_spaces',
-          'email' => 'email|required|unique:users',
+          'email' => 'email|required|unique:admin',
           'password' => 'required|min:8',
-      ],[
-          'name.required' => 'First name tidak boleh kosong.',
-          'name.alpha_spaces' => 'First name hanya boleh berisi abjad dan space',
-          'email.email' => 'E-mail harus valid',
-          'email.required' => 'E-mail tidak boleh kosong',
-          'email:unique' => 'E-mail sudah pernah digunakan',
-          'password.required' => 'Password tidak boleh kosong',
-          'password.min' => 'Password minimal 8 karakter',
       ])->validate();
 
       $datalama->update([
           'name' => $req->name,
           'email' => $req->email,
           'password' => $req->password,
-          'status' => "1"
+          'status' => 1
       ]);
-        echo "data berhasil diupdate";
+        return redirect(url('admin/admin-view'));
+      }
+
+      public function delete($id){
+        Admin::find($id)->delete();
+        return redirect(url('admin/admin-view'));
       }
   }

@@ -7,19 +7,10 @@
     public function index (){
         return view('backend.pages.dashboard');
     }
-    public function adminView(){
-      return view('backend.pages.admin.view');
+    public function logDownloadView (){
+      return view('backend.pages.log.logDownload');
     }
-    public function categoryView(){
-      return view('backend.pages.category.view');
-    }
-    public function logDownloadView(){
-      return view('backend.pages.logDownload.view');
-    }
-    public function logViewView(){
-      return view('backend.pages.logView.view');
-    }
-    public function fiturView(){
-      return view('backend.pages.fitur.view');
+    public function logViewView (){
+      return view('backend.pages.log.logView');
     }
   }

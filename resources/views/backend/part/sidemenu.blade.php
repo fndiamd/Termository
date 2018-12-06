@@ -80,9 +80,9 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{url('admin/fitur-view')}}">
+      <a class="nav-link" href="{{url('admin/feature-view')}}">
         <i class="menu-icon icon-layers"></i>
-        <span class="menu-title">Fitur</span>
+        <span class="menu-title">Feature</span>
       </a>
     </li>
     <!-- <li class="nav-item">

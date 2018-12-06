@@ -2,34 +2,53 @@
   Category
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
-<a href="<?php echo e(url('admin/category-createView')); ?>"><button type="button" class="btn btn-primary">Add Category</button></a><br><br>
+<a href="<?php echo e(url('admin/category-createView')); ?>">
+  <button type="button" class="btn btn-primary" style="margin-left: 248px"> Add Category </button>
+</a><br><br>
 <div class="container">
-  <table id="myTable" class="table table-striped table-bordered">
+  <table id="categoryView" class="table table-striped table-bordered">
     <thead>
       <tr>
         <th>Id</th>
-        <th>Kategori</th>
-        <th>Command</th>
+        <th>Category</th>
+        <th>Faicon</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <td>01</td>
-      <td>wik wik wik</td>
-      <td>
-        <a href="#"><button class="btn btn-warning" name="button"><i class="menu-icon icon-pencil"></i>Update</button></a>
-        <a href="#"><button class="btn btn-danger" name="button"><i class="menu-icon icon-trash"></i>Delete</button></a>
-      </td>
+      <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <tr>
+       <td><?php echo e($row['id_category']); ?></td>
+       <td><?php echo e($row['category']); ?></td>
+       <td><?php echo e($row['faicon']); ?></td>
+       <td>
+         <a href="<?php echo e(url('admin/category-updateView', $row['id_category'])); ?>">
+           <button class="btn btn-warning" name="button" style="padding: 8px">
+             <i class="menu-icon icon-pencil"></i>Update
+           </button>
+         </a>
+         <a href="<?php echo e(url('admin/category-delete', $row['id_category'])); ?>">
+           <button class="btn btn-danger" name="button" style=" padding: 8px; margin-left: 5px">
+             <i class="menu-icon icon-trash"></i>Delete
+           </button>
+         </a>
+       </td>
+      </tr>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </tbody>
     <tfoot>
-      <th>Id</th>
-      <th>Kategori</th>
-      <th>Command</th>
+      <tr>
+        <th>Id</th>
+        <th>Category</th>
+        <th>Faicon</th>
+        <th>Action</th>
+      </tr>
     </tfoot>
   </table>
 </div>
 <script>
   $(document).ready( function () {
-      $('#myTable').DataTable();
+      $('#categoryView').DataTable();
   });
 </script>
 <?php $__env->stopSection(); ?>

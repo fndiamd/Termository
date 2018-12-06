@@ -3,6 +3,7 @@
   Create Admin
 @endsection
 @section('content')
+<div class="container">
 <form action="{{ url('admin/admin-create') }}" method="post">
   @csrf
   <div class="form-row">

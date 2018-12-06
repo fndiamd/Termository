@@ -31,33 +31,33 @@
         Route::get('/', 'RouterController@index');
         //Admin get
         Route::get('admin-view', 'AdminController@index');
-        ROute::get('admin-createView', 'AdminController@createView');
+        Route::get('admin-createView', 'AdminController@createView');
         Route::get('admin-updateView/{id}', 'AdminController@updateView');
+        Route::get('admin-delete/{id}', 'AdminController@delete');
 
         // Admin post
         Route::post('admin-create', 'AdminController@create');
-        ROute::post('admin-delete/{id}', 'AdminController@delete');
         Route::post('admin-update/{id}', 'AdminController@update');
 
         //Category get
         Route::get('category-view', 'CategoryController@index');
-        ROute::get('category-createView', 'CategoryController@createView');
+        Route::get('category-createView', 'CategoryController@createView');
         Route::get('category-updateView/{id}', 'CategoryController@updateView');
+        Route::get('category-delete/{id}', 'CategoryController@delete');
 
         // Category post
         Route::post('category-create', 'CategoryController@create');
-        ROute::post('category-delete/{id}', 'CategoryController@delete');
-        Route::post('category-update', 'CategoryController@update');
+      Route::post('category-update/{id}', 'CategoryController@update');
 
-        //fitur get
-        Route::get('fitur-view', 'CategoryController@index');
-        ROute::get('fitur-createView', 'CategoryController@createView');
-        Route::get('fitur-updateView/{id}', 'CategoryController@updateView');
+        //feature get
+        Route::get('feature-view', 'FeatureController@index');
+        Route::get('feature-createView', 'FeatureController@createView');
+        Route::get('feature-updateView/{id}', 'FeatureController@updateView');
+        Route::get('feature-delete/{id}', 'FeatureController@delete');
 
-        // fitur post
-        Route::post('fitur-create', 'FiturController@create');
-        ROute::post('fitur-delete/{id}', 'FiturController@delete');
-        Route::post('fitur-update', 'FiturController@update');
+        // feature post
+        Route::post('feature-create', 'FeatureController@create');
+        Route::post('feature-update/{id}', 'FeatureController@update');
 
         //User get
         Route::get('user-view', 'UserController@index');
