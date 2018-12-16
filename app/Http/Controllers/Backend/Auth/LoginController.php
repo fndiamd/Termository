@@ -10,7 +10,13 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class LoginController extends Controller {
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/admin/login';
+    protected $redirectTo = '/admin';
+
+    
+    public function __construct(){
+        $this->middleware('guest')->except('logout');;
+        $this->middleware('guest:admin')->except('logout');
+    }
 
     public function showLoginForm(){
         return view('backend.pages.login');
@@ -22,8 +28,10 @@ class LoginController extends Controller {
         return redirect('/admin/login');
     }
 
-    public function __construct(){
-        $this->middleware('guest')->except('logout');
+
+    protected function guard()
+    {
+        return Auth::guard('admin');
     }
 
 }

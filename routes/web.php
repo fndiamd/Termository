@@ -9,25 +9,27 @@
         Route::get('explore-files', 'FilesController@explore');
         
         Route::group(['middleware' => 'guest'], function(){
-          Route::get('sign-in', 'Auth\LoginController@showLoginForm');
-          Route::post('request-signin', 'Auth\LoginController@login');
+            Route::get('sign-in', ['uses' => 'Auth\LoginController@showLoginForm', 'as' => 'login']);
+            Route::post('request-signin', 'Auth\LoginController@login');
         });
 
         Route::get('profile', 'ProfileController@index')->middleware('auth');
-
         Route::group(['middleware' => 'auth', 'prefix' => 'profile'], function(){
-          Route::get('logout', 'Auth\LoginController@logout');
-          Route::get('settings', 'ProfileController@viewSetting');
-          Route::post('settings', 'ProfileController@setting');
+            Route::get('logout', 'Auth\LoginController@logout');
+            Route::get('settings', 'ProfileController@viewSetting');
+            Route::post('settings', 'ProfileController@setting');
+            Route::get('setting-password', 'ProfileController@viewPasswordSetting');
+            Route::post('setting-password', 'ProfileController@passwordSetting');
+            Route::post('upload-files', 'FilesController@uploadFiles');
         });
     });
 
-    // Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function(){
-    //   Route::get('login', 'Auth\LoginController@showLoginForm');
-    //   Route::post('request-login', 'Auth\LoginController@login');
-    // });
+    Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'middleware' => 'guest:admin'], function(){
+        Route::get('login', ['uses' => 'Auth\LoginController@showLoginForm', 'as' => 'admin.login']);
+        Route::post('request-login', 'Auth\LoginController@login');
+    });
 
-    Route::group(['namespace' => 'Backend', 'prefix' => 'admin'], function(){
+    Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
         Route::get('/', 'RouterController@index');
         Route::get('admin-view', 'RouterController@adminView');
         Route::get('user-view', 'RouterController@userView');

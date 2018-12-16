@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
                 'first_name' => 'Fandi',
                 'last_name' => 'Ahmad',
                 'email' => 'fndiamd@gmail.com',
-                'password' => \Hash::make('fndiamd'),
+                'password' => \Hash::make('fndiamd99'),
                 'gender' => 1,
                 'phone' => '8612994819',
                 'hint' => '83831687475',

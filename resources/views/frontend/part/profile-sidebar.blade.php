@@ -1,13 +1,13 @@
 <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
         <div class="sidebar-brand">
-            <a href="#">My Repository</a>
+            <a href="{{ url('profile') }}">My Repository</a>
             <div id="close-sidebar">
                 <i class="fas fa-times"></i>
             </div>
         </div>
         <div class="sidebar-header">
-            <button class="btn btn-light btn-utrun hvr-sweep-to-blue btn-upload">
+            <button class="btn btn-light btn-utrun hvr-sweep-to-blue btn-upload" data-toggle="modal" data-target="#uploadFiles">
                 <i class="fa fa-plus"></i>  Upload Files
             </button>
         </div>
