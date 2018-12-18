@@ -24,13 +24,25 @@ class AdminController extends Controller{
       $data = $req->only([
           'name',
           'email',
+          'passwordConfirm',
           'password'
       ]);
       Validator::make($data, [
           'name' => 'required|alpha_spaces',
           'email' => 'email|required|unique:admin',
+          'passwordConfirm' => 'required|same:password',
           'password' => 'required|min:8',
-      ])->validate();
+      ],[
+        'name.required' => 'Name tidak boleh kosong.',
+        'name.alpha_spaces' => 'Name hanya boleh berisi abjad dan space',
+        'password.required' => 'Password tidak boleh kosong',
+        'password.min' => 'Password minimal 8 karakter',
+        'passwordConfirm.required' => 'Password Confirm tidak boleh kosong.',
+        'passwordConfirm.same' => 'Password Confirm harus sama dengan Password',
+        'email.email' => 'E-mail harus valid',
+        'email.required' => 'E-mail tidak boleh kosong',
+        'email:unique' => 'E-mail sudah pernah digunakan',
+        ])->validate();
 
       Admin::create([
           'name' => $req->name,
@@ -44,16 +56,28 @@ class AdminController extends Controller{
     public function update(Request $req, $id){
       $datalama = Admin::find($id);
       $databaru = $req->only([
-          'name',
-          'email',
-          'password'
+        'name',
+        'email',
+        'passwordConfirm',
+        'password'
       ]);
 
       Validator::make($databaru, [
-          'name' => 'required|alpha_spaces',
-          'email' => 'email|required|unique:admin',
-          'password' => 'required|min:8',
-      ])->validate();
+        'name' => 'required|alpha_spaces',
+        'email' => 'email|required|unique:admin',
+        'passwordConfirm' => 'required|same:password',
+        'password' => 'required|min:8',
+      ],[
+        'name.required' => 'Name tidak boleh kosong.',
+        'name.alpha_spaces' => 'Name hanya boleh berisi abjad dan space',
+        'password.required' => 'Password tidak boleh kosong',
+        'password.min' => 'Password minimal 8 karakter',
+        'passwordConfirm.required' => 'Password Confirm tidak boleh kosong.',
+        'passwordConfirm.same' => 'Password Confirm harus sama dengan Password',
+        'email.email' => 'E-mail harus valid',
+        'email.required' => 'E-mail tidak boleh kosong',
+        'email:unique' => 'E-mail sudah pernah digunakan',
+        ])->validate();
 
       $datalama->update([
           'name' => $req->name,

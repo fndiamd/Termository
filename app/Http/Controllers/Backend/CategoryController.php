@@ -28,7 +28,12 @@ class CategoryController extends Controller{
       Validator::make($data, [
           'category' => 'required|alpha_spaces|unique:category',
           'faicon' => 'required',
-      ])->validate();
+      ],[
+        'category.required' => 'Nama category tidak boleh kosong.',
+        'category.alpha_spaces' => 'Nama category hanya boleh berisi abjad dan space',
+        'category:unique' => 'Category sudah ada',
+        'faicon.required' => 'First name tidak boleh kosong.',
+        ])->validate();
 
       Category::create([
           'category' => $req->category,
@@ -47,7 +52,12 @@ class CategoryController extends Controller{
       Validator::make($databaru, [
         'category' => 'required|alpha_spaces',
         'faicon' => 'required',
-      ])->validate();
+      ],[
+        'category.required' => 'Nama category tidak boleh kosong.',
+        'category.alpha_spaces' => 'Nama category hanya boleh berisi abjad dan space',
+        'category:unique' => 'Category sudah ada',
+        'faicon.required' => 'First name tidak boleh kosong.',
+        ])->validate();
 
       $datalama->update([
           'category' => $req->category,
