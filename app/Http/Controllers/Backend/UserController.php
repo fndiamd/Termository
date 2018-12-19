@@ -6,7 +6,8 @@
 
     class UserController extends Controller{
         public function index(){
-            return view('backend.pages.user.view');
+            $user = User::all()->toArray();
+            return view('backend.pages.user.view', compact('user'));
         }
         public function createView(){
             return view('backend.pages.user.create');

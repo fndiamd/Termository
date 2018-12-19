@@ -47,7 +47,7 @@
 
         // Category post
         Route::post('category-create', 'CategoryController@create');
-      Route::post('category-update/{id}', 'CategoryController@update');
+        Route::post('category-update/{id}', 'CategoryController@update');
 
         //feature get
         Route::get('feature-view', 'FeatureController@index');

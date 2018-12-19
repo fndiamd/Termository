@@ -13,20 +13,18 @@
           <th>Phone</th>
           <th>Used Storage</th>
           <th>Status</th>
-          <th>Command</th>
           <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
+        <td><?php echo e($row['first_name']); ?></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td>
           <a href="<?php echo e(url('/admin/user-updateView/{id}')); ?>">
             <button class="btn btn-primary" name="button" style="padding: 8px">

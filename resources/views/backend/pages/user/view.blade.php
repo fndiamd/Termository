@@ -14,20 +14,18 @@
           <th>Phone</th>
           <th>Used Storage</th>
           <th>Status</th>
-          <th>Command</th>
           <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
+        <td>{{$row['first_name']}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td>
           <a href="{{url('/admin/user-updateView/{id}')}}">
             <button class="btn btn-primary" name="button" style="padding: 8px">
