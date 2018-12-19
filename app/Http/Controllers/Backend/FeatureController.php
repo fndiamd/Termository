@@ -32,7 +32,14 @@ class FeatureController extends Controller{
           'price' => 'required|numeric',
           'available_storage' => 'required|numeric',
           'description' => 'required',
-      ])->validate();
+      ],[
+        'title.required' => 'Title tidak boleh kosong.',
+        'price.required' => 'Price tidak boleh kosong.',
+        'price.numeric' => 'Price hanya bisa diisi angka.',
+        'available_storage.required' => 'Available storage tidak boleh kosong.',
+        'available_storage.numeric' => 'Available storage hanya bisa diisi angka.',
+        'description.required' => 'description tidak boleh kosong.',
+        ])->validate();
 
       Feature::create([
           'title' => $req->title,
@@ -57,7 +64,14 @@ class FeatureController extends Controller{
         'price' => 'required|numeric',
         'available_storage' => 'required|numeric',
         'description' => 'required',
-      ])->validate();
+      ],[
+        'title.required' => 'Title tidak boleh kosong.',
+        'price.required' => 'Price tidak boleh kosong.',
+        'price.numeric' => 'Price hanya bisa diisi angka.',
+        'available_storage.required' => 'Available storage tidak boleh kosong.',
+        'available_storage.numeric' => 'Available storage hanya bisa diisi angka.',
+        'description.required' => 'description tidak boleh kosong.',
+        ])->validate();
 
       $datalama->update([
           'title' => $req->title,
