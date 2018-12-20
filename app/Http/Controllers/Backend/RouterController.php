@@ -8,7 +8,7 @@ class RouterController extends Controller{
         return view('backend.pages.dashboard');
     }
     public function adminView(){
-      return view('backend.pages.admin');
+      return view('backend.pages.admin.view');
     }
     public function userView(){
       return view('backend.pages.user');

@@ -7,9 +7,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
 class Admin extends Authenticatable{
-    //use Notifiable;
+
+    use Notifiable;
     protected $table = 'admin';
     
+    protected $primaryKey = 'id_admin';
+
     protected $guard = 'admin';
 
     protected $fillable = [

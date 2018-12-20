@@ -9,14 +9,20 @@ use Validator;
 use App\User;
 use App\Category;
 use App\Files;
+use DB;
 
 class ProfileController extends Controller{
     public function index(){
-        $disk = Auth::user()->used_storage;
-        $usageDisk = ( $disk / 15000000 ) * 100; 
+        $disk = DB::table('files')->where('id_user', Auth::user()->id_user)->sum('size_file');
+        $usageDisk = ( $disk / 150000 ) * 100; 
+        $file = DB::table('files')->select('*')
+        ->where('id_user', Auth::user()->id_user)
+        ->where('flag', 1)
+        ->orderBy('updated_at', 'desc')
+        ->get();
         $data = [
             'category' => Category::all(),
-            'files' => Files::all(),
+            'files' => $file,
             'usageDisk' => $usageDisk,
             'disk' => $disk,
         ];
@@ -24,8 +30,8 @@ class ProfileController extends Controller{
     }
 
     public function viewSetting(){
-        $disk = Auth::user()->used_storage;
-        $usageDisk = ( $disk / 15000000 ) * 100; 
+        $disk = DB::table('files')->where('id_user', Auth::user()->id_user)->sum('size_file');
+        $usageDisk = ( $disk / 150000 ) * 100; 
         $data = [
             'user' => User::find( Auth::user()->id_user),
             'category' => Category::all(),
@@ -92,8 +98,8 @@ class ProfileController extends Controller{
     }
 
     public function viewPasswordSetting(){
-        $disk = Auth::user()->used_storage;
-        $usageDisk = ( $disk / 15000000 ) * 100; 
+        $disk = DB::table('files')->where('id_user', Auth::user()->id_user)->sum('size_file');
+        $usageDisk = ( $disk / 150000 ) * 100; 
         $data = [
             'user' => User::find( Auth::user()->id_user),
             'category' => Category::all(),
@@ -135,5 +141,66 @@ class ProfileController extends Controller{
                 'text' => 'Your password old is wrong',
             ]);
         }
+    }
+
+    public function uploadView(){
+        $disk = DB::table('files')->where('id_user', Auth::user()->id_user)->sum('size_file');
+        $usageDisk = ( $disk / 150000 ) * 100; 
+        $data = [
+            'category' => Category::all(),
+            'usageDisk' => $usageDisk,
+            'disk' => $disk,
+        ];
+        return view('frontend.pages.user.upload', $data);
+    }
+
+    public function viewFiles($category){
+        $idCategory = DB::table('category')->select('id_category')->where('category', $category)->first();
+        $disk = DB::table('files')->where('id_user', Auth::user()->id_user)->sum('size_file');
+        $usageDisk = ( $disk / 150000 ) * 100; 
+        $file = DB::table('files')->select('*')
+        ->where('id_category', $idCategory->id_category)
+        ->where('id_user', Auth::user()->id_user)->get();
+
+        $data = [
+            'category' => Category::all(),
+            'files' => $file,
+            'usageDisk' => $usageDisk,
+            'disk' => $disk,
+        ];
+        return view('frontend.pages.user.dashboard', $data);
+    }
+
+    public function trash(){
+        $disk = DB::table('files')->where('id_user', Auth::user()->id_user)->sum('size_file');
+        $usageDisk = ( $disk / 150000 ) * 100; 
+        $file = DB::table('files')->select('*')
+                ->where('id_user', Auth::user()->id_user)
+                ->where('flag', 0)
+                ->get();
+
+        $data = [
+            'category' => Category::all(),
+            'files' => $file,
+            'usageDisk' => $usageDisk,
+            'disk' => $disk,
+        ];
+        return view('frontend.pages.user.trash', $data);
+    }
+
+    public function updateView($id){
+        $disk = DB::table('files')->where('id_user', Auth::user()->id_user)->sum('size_file');
+        $file = DB::table('files')
+                ->where('id_user', Auth::user()->id_user)
+                ->where('id_file', $id)
+                ->first();
+        $usageDisk = ( $disk / 150000 ) * 100; 
+        $data = [
+            'category' => Category::all(),
+            'usageDisk' => $usageDisk,
+            'disk' => $disk,
+            'file' => $file
+        ];
+        return view('frontend.pages.user.update', $data);
     }
 }

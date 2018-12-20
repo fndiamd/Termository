@@ -14,8 +14,8 @@ class AdminSeeder extends Seeder
         $data = [
             array(
                 'name' => 'Fandi Ahmad',
-                'email' => 'admin@termository',
-                'password' => \Hash::make('admin'),
+                'email' => 'admin@termository.com',
+                'password' => \Hash::make('admin123'),
                 'status' => 1,
             ),
         ];

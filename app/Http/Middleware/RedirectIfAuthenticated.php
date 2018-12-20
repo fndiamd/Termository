@@ -18,13 +18,12 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            //return redirect('/');
             switch($guard){
                 case 'admin':
-                    return redirect(url('admin/login'));
+                    return redirect(url('admin'));
                     break;
                 default : 
-                    return redirect(url('/'));
+                    return redirect(url('profile'));
                     break;
             }
         }

@@ -13,9 +13,9 @@
                 <h1>The best way to save and publish your files <br> With <span>Termository</span></h1>
                 <p>Free for you 15 GB Spaces</p>
                 <div class="trial-form">
-                <form>
-                    <input type="text" class="form-control" name="trial" placeholder="Search files in here" required="required">
-                    <button type="button" class="btn hvr-sweep-to-blue btn-utrun btn-primary">SEARCH FILES<i class="flaticon-next"></i></button>
+                <form action="{{ url('search') }}">
+                    <input type="text" class="form-control" name="key" placeholder="Search files in here" required="required">
+                    <button type="submit" class="btn hvr-sweep-to-blue btn-utrun btn-primary">SEARCH FILES<i class="flaticon-next"></i></button>
                 </form>
                 </div>
             </div>
@@ -24,7 +24,7 @@
             <!-- Start Col -->
             <div class="col-lg-6 col-md-6">
             <div class="working-person">
-                <img src="{{ asset('images/normal/person.png') }}" alt="">
+                <img src="{{ asset('assets/images/normal/person.png') }}" alt="">
             </div>
             </div>
             <!-- End Col -->
@@ -95,7 +95,7 @@
                         <div class="row">
                         <div class="col-lg-4 col-md-4 padding-left">
                             <div class="tab-thumb">
-                            <img src="{{ asset('images/normal/tab-thumb.png') }}" alt="Tab-img">
+                            <img src="{{ asset('assets/images/normal/tab-thumb.png') }}" alt="Tab-img">
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8">
@@ -114,12 +114,12 @@
                         <div class="row">
                         <div class="col-lg-4 col-md-4 padding-left">
                             <div class="tab-thumb">
-                            <img src="{{ asset('images/normal/tab-thumb.png') }}" alt="Tab-img">
+                            <img src="{{ asset('assets/images/normal/tab-thumb.png') }}" alt="Tab-img">
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8">
                             <div class="tab-info">
-                            <h2>Free unlimited private repositories</h2>
+                            <h2>Free 15GB space disk</h2>
                             <p>Free for a small teams under 5 and priced to scale with Standart or Premium plans</p>
                             </div>
                         </div>
@@ -131,14 +131,14 @@
                         <div class="row">
                         <div class="col-lg-4 col-md-4 padding-left">
                             <div class="tab-thumb">
-                            <img src="{{ asset('images/normal/tab-thumb.png') }}" alt="Tab-img">
+                            <img src="{{ asset('assets/images/normal/tab-thumb.png') }}" alt="Tab-img">
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8">
                             <div class="tab-info">
-                            <h2>Best-in-class Jira & Trello integration</h2>
+                            <h2>Secure yur files</h2>
                             <p>
-                                Keep your projects organized by creating Termository branches right from Jira issues Trello cards.
+                                You can secure your files by storing them as a private
                             </p>
                             </div>
                         </div>
@@ -155,9 +155,9 @@
     </section>
     <!-- Aamzing Features Section -->
     <!-- Pricing Table Section -->
-    <section id="pricing-table-section" class="bg-white defalut-space">
+    <!-- <section id="pricing-table-section" class="bg-white defalut-space">
         <div class="container">
-        <!--  Start Row -->
+        
         <div class="row">
             <div class="col-lg-12">
                 <div class="default-title text-center">
@@ -168,8 +168,7 @@
                 </div>
             </div>
         </div>
-        <!--  End Row -->
-        <!--  Start Row -->
+
         <div class="row ">
             <div class="cd-pricing-container cd-has-margins">
                 <ul class="cd-pricing-list cd-bounce-invert">
@@ -181,7 +180,7 @@
                             <h3> <span class="cd-value">$0</span>.00</h3>
                             </div>
                             <h2>Free</h2>
-                        </header> <!-- .cd-pricing-header -->
+                        </header> 
                         <div class="cd-pricing-body">
                             <ul class="cd-pricing-features">
                             <li><span><i class="flaticon-house"></i></span></li>
@@ -192,7 +191,7 @@
                             <li>Web Development</li>
                             <li><button class="btn btn-default light-animate-btn  price-btn-defalut">Purchase<i class="flaticon-next"></i></button></li>
                             </ul>
-                        </div> <!-- .cd-pricing-body -->
+                        </div> 
                         </li>
                         <li data-type="yearly" class="is-hidden">
                         <header class="cd-pricing-header normal-bg1">
@@ -200,7 +199,7 @@
                             <h3> <span class="cd-value">$50</span>.00</h3>
                             </div>
                             <h2>Basic</h2>
-                        </header> <!-- .cd-pricing-header -->
+                        </header> 
                         <div class="cd-pricing-body">
                             <ul class="cd-pricing-features">
                             <li><span><i class="flaticon-house"></i></span></li>
@@ -211,10 +210,10 @@
                             <li>Web Development</li>
                             <li><button class="btn btn-default light-animate-btn  price-btn-defalut">Purchase<i class="flaticon-next"></i></button></li>
                             </ul>
-                        </div> <!-- .cd-pricing-body -->
+                        </div> 
 
                         </li>
-                    </ul> <!-- .cd-pricing-wrapper -->
+                    </ul> 
                     </li>
                     <li class="cd-popular">
                     <ul class="cd-pricing-wrapper">
@@ -224,7 +223,7 @@
                             <h3> <span class="cd-value">$48</span>.99</h3>
                             </div>
                             <h2>Starndard</h2>
-                        </header> <!-- .cd-pricing-header -->
+                        </header> 
                         <div class="cd-pricing-body">
                             <ul class="cd-pricing-features">
                             <li><span><i class="flaticon-house-1"></i></span></li>
@@ -235,7 +234,7 @@
                             <li>Web Development</li>
                             <li><button class="btn btn-default light-animate-btn  price-btn-defalut">Purchase<i class="flaticon-next"></i></button></li>
                             </ul>
-                        </div> <!-- .cd-pricing-body -->
+                        </div> 
                         </li>
                         <li data-type="yearly" class="is-hidden">
                         <header class="cd-pricing-header normal-bg2">
@@ -243,7 +242,7 @@
                             <h3> <span class="cd-value">$200</span>.99</h3>
                             </div>
                             <h2>Starndard</h2>
-                        </header> <!-- .cd-pricing-header -->
+                        </header> 
                         <div class="cd-pricing-body">
                             <ul class="cd-pricing-features">
                             <li><span><i class="flaticon-house-1"></i></span></li>
@@ -254,10 +253,10 @@
                             <li>Web Development</li>
                             <li><button class="btn btn-default light-animate-btn  price-btn-defalut">Purchase<i class="flaticon-next"></i></button></li>
                             </ul>
-                        </div> <!-- .cd-pricing-body -->
+                        </div> 
 
                         </li>
-                    </ul> <!-- .cd-pricing-wrapper -->
+                    </ul> 
                     </li>
                     <li>
                     <ul class="cd-pricing-wrapper">
@@ -267,7 +266,7 @@
                             <h3> <span class="cd-value">$60</span>.99</h3>
                             </div>
                             <h2>Premium</h2>
-                        </header> <!-- .cd-pricing-header -->
+                        </header> 
                         <div class="cd-pricing-body">
                             <ul class="cd-pricing-features">
                             <li><span><i class="flaticon-house"></i></span></li>
@@ -278,7 +277,7 @@
                             <li>Web Development</li>
                             <li><button class="btn btn-default light-animate-btn  price-btn-defalut">Purchase<i class="flaticon-next"></i></button></li>
                             </ul>
-                        </div> <!-- .cd-pricing-body -->
+                        </div> 
                         </li>
                         <li data-type="yearly" class="is-hidden">
                         <header class="cd-pricing-header normal-bg1">
@@ -286,7 +285,7 @@
                             <h3> <span class="cd-value">$500</span>.99</h3>
                             </div>
                             <h2>Premium</h2>
-                        </header> <!-- .cd-pricing-header -->
+                        </header> 
                         <div class="cd-pricing-body">
                             <ul class="cd-pricing-features">
                             <li><span><i class="flaticon-house"></i></span></li>
@@ -297,16 +296,16 @@
                             <li>Web Development</li>
                             <li><button class="btn btn-default light-animate-btn  price-btn-defalut">Purchase<i class="flaticon-next"></i></button></li>
                             </ul>
-                        </div> <!-- .cd-pricing-body -->
+                        </div> 
                         </li>
-                    </ul> <!-- .cd-pricing-wrapper -->
+                    </ul> 
                     </li>
-                </ul> <!-- .cd-pricing-list -->
-            </div> <!-- .cd-pricing-container -->
+                </ul> 
+            </div> 
         </div>
-        <!--  End Row -->
+        
         </div>
-    </section>
+    </section> -->
     <!-- Pricing Table Section -->
     <!--  Wild wide User -->
     <section id="contact-section" class="bg-gray defalut-space">
@@ -319,12 +318,23 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6">
+                <form method="post" action="">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter email">
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" class="form-control" id="message" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
                 </div>
             </div>
             <!--  End Row -->

@@ -8,8 +8,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-hidden">
     <div class="container">
-        <a class="navbar-brand logo-blue" href="{{ url('/') }}"><img src="{{ asset('images/normal/termository-blue.png') }}" alt="Footer Logo"></a>
-        <a class="navbar-brand logo-light" href="{{ url('/') }}"><img src="{{ asset('images/normal/termository-light.png') }}" alt="Footer Logo"></a>
+        <a class="navbar-brand logo-blue" href="{{ url('/') }}"><img src="{{ asset('assets/images/normal/termository-blue.png') }}" alt="Footer Logo"></a>
+        <a class="navbar-brand logo-light" href="{{ url('/') }}"><img src="{{ asset('assets/images/normal/termository-light.png') }}" alt="Footer Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,9 +28,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link utrun-scroll" href="{{ url('/#amazing-features') }}">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link utrun-scroll" href="{{ url('/#pricing-table-section') }}">pricing</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link utrun-scroll" href="{{ url('/#contact-section') }}">contact</a>

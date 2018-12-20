@@ -14,7 +14,7 @@ class FilesTable extends Migration
             $table->string('title', 200);
             $table->text('desc');
             $table->string('attachment', 150);
-            $table->integer('size_file');
+            $table->float('size_file');
             $table->string('type_file', 50);
             $table->integer('flag');
             $table->integer('status');

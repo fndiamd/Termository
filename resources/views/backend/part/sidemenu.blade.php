@@ -26,37 +26,54 @@
   <ul class="nav">
     <li class="nav-item nav-profile">
       <img src="{{asset('backend/images/faces/face1.jpg')}}" alt="profile image">
-      <p class="text-center font-weight-medium">Admin Tamvan</p>
+      <p class="text-center font-weight-medium">{{ Auth::user()->name }}</p>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{url('admin')}}">
-        <i class="menu-icon icon-diamond"></i>
+      <a class="nav-link" href="{{ url('admin') }}">
+        <i class="menu-icon icon-screen-desktop"></i>
         <span class="menu-title">Dashboard</span>
+        <div class="badge badge-success">3</div>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{url('admin/admin-view')}}">
-        <i class="menu-icon icon-lock"></i>
-        <span class="menu-title">Admin</span>
+      <a class="nav-link" data-toggle="collapse" href="#master-dropdown" aria-expanded="false" aria-controls="master-dropdown">
+        <i class="menu-icon icon-magic-wand"></i>
+        <span class="menu-title">Master</span>
       </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{url('admin/user-view')}}">
-        <i class="menu-icon icon-user"></i>
-        <span class="menu-title">User</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{url('admin/category-view')}}">
-        <i class="menu-icon icon-grid"></i>
-        <span class="menu-title">Category</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{url('admin/file-view')}}">
-        <i class="menu-icon icon-folder"></i>
-        <span class="menu-title">File</span>
-      </a>
+      <div class="collapse" id="master-dropdown">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/admin-view') }}">
+              <i class="menu-icon icon-lock"></i>
+              <span class="menu-title">Admin</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/user-view') }}">
+              <i class="menu-icon icon-user"></i>
+              <span class="menu-title">User</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/category-view') }}">
+              <i class="menu-icon icon-grid"></i>
+              <span class="menu-title">Category</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/file-view') }}">
+              <i class="menu-icon icon-folder"></i>
+              <span class="menu-title">File</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/fitur-view') }}">
+              <i class="menu-icon icon-layers"></i>
+              <span class="menu-title">Feature</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{{url('admin/order-view')}}">
@@ -65,11 +82,11 @@
       </a>
     </li>
     <li class="nav-item d-none d-md-block">
-      <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
+      <a class="nav-link" data-toggle="collapse" href="#log-dropdown" aria-expanded="false" aria-controls="log-dropdown">
         <i class="menu-icon icon-notebook"></i>
         <span class="menu-title">Log</span>
       </a>
-      <div class="collapse" id="page-layouts">
+      <div class="collapse" id="log-dropdown">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
             <a class="nav-link" href="{{url('admin/log-download-view')}}">Log Download</a>
@@ -85,30 +102,14 @@
         <span class="menu-title">Fitur</span>
       </a>
     </li>
-    <!-- <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#apps-dropdown" aria-expanded="false" aria-controls="apps-dropdown">
-        <i class="menu-icon icon-settings"></i>
-        <span class="menu-title">Apps</span>
-        <div class="badge badge-info">2</div>
-      </a>
-      <div class="collapse" id="apps-dropdown">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item">
-            <a class="nav-link" href="pages/apps/email.html')}}">E-mail</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/apps/calendar.html')}}">Calendar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/apps/todo.html')}}">Todo List</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/apps/gallery.html')}}">Gallery</a>
-          </li>
-        </ul>
-      </div>
-    </li>
     <li class="nav-item">
+      <a class="nav-link" href="{{ url('admin/logout') }}">
+        <i class="menu-icon icon-power"></i>
+        <span class="menu-title">Logout</span>
+      </a>
+    </li>
+    
+    <!-- <li class="nav-item">
       <a class="nav-link" href="pages/widgets.html')}}">
         <i class="menu-icon icon-speedometer"></i>
         <span class="menu-title">Widgets</span>

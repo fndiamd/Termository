@@ -37,12 +37,6 @@ class CategorySeed extends Seeder
                 'updated_at' => new DateTime,
             ),
             array(
-                'category' => 'Programs',
-                'faicon' => 'fa fa-globe',
-                'created_at' => new DateTime,
-                'updated_at' => new DateTime,
-            ),
-            array(
                 'category' => 'Videos',
                 'faicon' => 'fa fa-video',
                 'created_at' => new DateTime,
