@@ -8,7 +8,7 @@ use Validator;
 class CategoryController extends Controller{
     public function index(){
       $category = Category::all()->toArray();
-      return view('backend.pages.category.view',compact('category'));
+      return view('backend.pages.category.view', compact('category'));
     }
 
     public function createView(){

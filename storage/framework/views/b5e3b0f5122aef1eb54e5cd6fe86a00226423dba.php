@@ -16,22 +16,23 @@
       </tr>
     </thead>
     <tbody>
+      <?php $__currentLoopData = $order; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
       <tr>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+        <td> <?php echo e($row['id_order']); ?> </td>
+        <td> <?php echo e($row['id_feature']); ?> </td>
+        <td> <?php echo e($row['id_user']); ?> </td>
+        <td> <?php echo e($row['order_date']); ?> </td>
+        <td> <?php echo e($row['payment']); ?> </td>
+        <td> <?php echo e($row['status']); ?> </td>
         <td>
-          <a href="<?php echo e(url('/admin/order-updateView/{id}')); ?>">
+          <a href="<?php echo e(url('/admin/order-updateView', $row['id_order'])); ?>">
             <button class="btn btn-primary" name="button" style="padding: 8px">
               <i class="menu-icon icon-magnifier"></i> Detail
             </button>
           </a>
-          </a>
         </td>
       </tr>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </tbody>
     <tfoot>
       <tr>

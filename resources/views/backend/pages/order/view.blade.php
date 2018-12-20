@@ -17,22 +17,23 @@
       </tr>
     </thead>
     <tbody>
+      @foreach($order as $row)
       <tr>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+        <td> {{$row['id_order']}} </td>
+        <td> {{$row['id_feature']}} </td>
+        <td> {{$row['id_user']}} </td>
+        <td> {{$row['order_date']}} </td>
+        <td> {{$row['payment']}} </td>
+        <td> {{$row['status']}} </td>
         <td>
-          <a href="{{url('/admin/order-updateView/{id}')}}">
+          <a href="{{url('/admin/order-updateView', $row['id_order'])}}">
             <button class="btn btn-primary" name="button" style="padding: 8px">
               <i class="menu-icon icon-magnifier"></i> Detail
             </button>
           </a>
-          </a>
         </td>
       </tr>
+      @endforeach
     </tbody>
     <tfoot>
       <tr>

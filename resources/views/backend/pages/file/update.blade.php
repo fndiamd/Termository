@@ -1,52 +1,45 @@
 @extends('backend.index') 
 @section('title') 
-    File Update
+    File Detail
 @endsection 
-@section('content') 
-    <form> 
-        <div class="form-row"> 
-            <div class="form-group col-md-6"> 
-                <label for="inputEmail4">Email</label> 
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email"> 
-            </div> 
-            <div class="form-group col-md-6"> 
-                <label for="inputPassword4">Password</label> 
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password"> 
-            </div> 
+@section('content')
+<div class="container">
+    <div class="form-row"> 
+        <div class="form-group col-md-6"> 
+            <label for="CategoryFile">Category</label>
+            <input type="text" class="form-control" id="CategoryFile" value="{{$fileUpdate->id_category}} {{$fileUpdate->last_name}}" readonly>
+        </div>
+        <div class="form-group col-md-6"> 
+            <label for="UserFile">User</label> 
+            <input type="text" class="form-control" id="UserFile" value="{{$fileUpdate['id_user']}}" readonly>
         </div> 
-        <div class="form-group"> 
-            <label for="inputAddress">Address</label> 
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"> 
-        </div> 
-        <div class="form-group"> 
-            <label for="inputAddress2">Address 2</label> 
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"> 
-        </div> 
-        <div class="form-row"> 
-            <div class="form-group col-md-6"> 
-                <label for="inputCity">City</label> 
-                <input type="text" class="form-control" id="inputCity"> 
-            </div> 
-            <div class="form-group col-md-4"> 
-                <label for="inputState">State</label> 
-                <select id="inputState" class="form-control"> 
-                    <option selected>Choose...</option> 
-                    <option>...</option> 
-                </select> 
-            </div> 
-                <div class="form-group col-md-2"> 
-                <label for="inputZip">Zip</label> 
-                <input type="text" class="form-control" id="inputZip"> 
-            </div> 
-        </div> 
-        <div class="form-group"> 
-            <div class="form-check"> 
-                <input class="form-check-input" type="checkbox" id="gridCheck"> 
-                <label class="form-check-label" for="gridCheck"> 
-                    Check me out 
-                </label> 
-            </div> 
-        </div> 
-        <button type="submit" class="btn btn-primary">Sign in</button> 
-    </form> 
+    </div> 
+    <div class="form-group"> 
+        <label for="TitleFile">Title</label>
+        <input type="text" class="form-control" id="TitleFile" value="{{$fileUpdate['title']}}" readonly>
+    </div> 
+    <div class="form-group"> 
+        <label for="DescFile">Desc</label>
+        <input type="text" class="form-control" id="DescFile" value="{{$fileUpdate['desc']}}" readonly>
+    </div>
+    <div class="form-group"> 
+        <label for="AttachmentFile">Attachment</label>
+        <input type="text" class="form-control" id="AttachmentFile" value="{{$fileUpdate['attachment']}}" readonly>
+    </div> 
+    <div class="form-row"> 
+        <div class="form-group col-md-4"> 
+            <label for="SizeFile">Size</label> 
+            <input type="text" class="form-control" id="StatusUser" value="{{$fileUpdate['size_file']}}" readonly>
+        </div>
+        <div class="form-group col-md-4"> 
+            <label for="TypeFile">Type</label> 
+            <input type="text" class="form-control" id="TypeFile" value="{{$fileUpdate['type_file']}}" readonly>
+        </div>
+        <div class="form-group col-md-4"> 
+            <label for="StatusFile">Status</label> 
+            <input type="text" class="form-control" id="StatusFile" value="{{$fileUpdate['status']}}" readonly>
+        </div>
+    </div>
+    <a href="{{url('/admin/file-view/')}}"><button type="submit" class="btn btn-primary">Back</button></a>
+</div>
 @endsection
