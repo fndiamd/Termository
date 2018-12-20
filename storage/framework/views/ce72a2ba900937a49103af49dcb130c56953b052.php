@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="<?php echo e(asset('backend/css/style.css')); ?>">
 
   <script src="<?php echo e(asset('backend/js/jquery-3.3.1.js')); ?>"></script>
+  <script src="<?php echo e(asset('backend/ChartJS/Chart.js')); ?>"></script>
 </head>
 <body>
   <div class="container-scroller">
@@ -47,5 +48,6 @@
   <script src="<?php echo e(asset('backend/js/dashboard.js')); ?>"></script>
   <script src="<?php echo e(asset('backend/DataTables/DataTables/js/jquery.dataTables.min.js')); ?>"></script>
   <script src="<?php echo e(asset('backend/DataTables/DataTables/js/dataTables.bootstrap4.min.js')); ?>"></script>
+  <script src="<?php echo e(asset('backend/ChartJS/Chart.js')); ?>"></script>
 </body>
 </html>
