@@ -5,6 +5,7 @@
 @section('content')
 <div class="container">
   <form action="{{ url('admin/feature-update', $feature['id_feature']) }}" method="post">
+    @csrf
     <div class="from-row">
       <div class="form-group">
         <label for="Title">Title</label>

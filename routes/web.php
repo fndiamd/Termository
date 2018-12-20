@@ -63,31 +63,31 @@
         Route::get('user-view', 'UserController@index');
         Route::get('user-createView', 'UserController@createView');
         Route::get('user-updateView/{id}', 'UserController@updateView');
+        Route::get('user-delete/{id}', 'UserController@delete');
 
         //User Post
         Route::post('user-create', 'UserController@create');
         Route::post('user-update', 'UserController@update');
-        Route::post('user-delete/{id}', 'UserController@delete');
 
         //File Get
         Route::get('file-view', 'FileController@index');
         Route::get('file-createView', 'FileController@createView');
         Route::get('file-updateView/{id}', 'FileController@updateView');
+        Route::get('file-delete/{id}', 'FileController@delete');
 
         // File Post
         Route::get('file-create', 'FileController@create');
         Route::get('file-update', 'FileController@update');
-        Route::get('file-delete/{id}', 'FileController@delete');
 
         //Order get
         Route::get('order-view', 'OrderController@index');
         Route::get('order-createView', 'OrderController@createView');
         Route::get('order-updateView/{id}',  'OrderController@updateView');
+        Route::get('order-delete/{id}', 'OrderController@delete');
 
         //Order Post
         Route::post('order-create', 'OrderController@create');
         Route::post('order-update', 'OrderController@update');
-        Route::post('order-delete/{id}', 'OrderController@delete');
 
         //Log
         Route::get('log-download-view', 'RouterController@logDownloadView');

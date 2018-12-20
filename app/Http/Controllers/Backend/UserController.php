@@ -16,13 +16,14 @@
             return view('backend.pages.user.create');
         }
         public function updateView($id){
-            return view('backend.pages.user.update');
+            $userUpdate = User::find($id);
+            return view('backend.pages.user.update', compact('userUpdate'));
         }
         public function update(Request $req, $id){
             $user = User::find($id);
         }
-        public function delete(Request $req, $id){
-            User::delte($id);
-            return url('backend.pages.user.view');
+        public function delete($id){
+            User::find($id)->delete();
+            return redirect(url('/admin/user-view'));
         }
     }
