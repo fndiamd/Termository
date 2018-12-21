@@ -3,20 +3,41 @@
   Log View
 @endsection
 @section('content')
-<div class="container">
-  <table id="myTable" class="table table-striped table-bordered">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>IP Address</th>
-          <th>Time View</th>
-        </tr>
-      </thead>
-  </table>
+<div >
+  <canvas id="line-chart" width="800" height="450"></canvas>
 </div>
-<script>
-  $(document).ready( function () {
-      $('#myTable').DataTable();
-  });
+<script type="text/javascript">
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: ["","January","February","Maret","April","May","June","July","August","September","October","November","December"],
+    datasets: [{
+        data: [
+          0,
+          $dataViewJanuari,
+          $dataViewFebruari,
+          $dataViewMaret,
+          $dataViewApril,
+          $dataViewMei,
+          $dataViewJuni,
+          $dataViewJuli,
+          $dataViewAgustus,
+          $dataViewSeptember,
+          $dataViewOktober,
+          $dataViewNovember,
+          $dataViewDesember],
+        label: "View",
+        borderColor: "#3e95cd",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Log View'
+    }
+  }
+});
 </script>
 @endsection

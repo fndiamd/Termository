@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" class="form-control" id="description" cols="30" rows="5"></textarea>
+                    <textarea name="description" class="form-control" id="description" cols="30" rows="5" required></textarea>
                     @value($errors->first('description'))
                         <small class="text-danger">
                             {{ $errors->first('description') }}

@@ -35,6 +35,7 @@ class LoginController extends Controller {
 
             return redirect()->intended(route('admin.dashboard'));
         }
+        
         return back()->withInput($request->only('email', 'remember'));
     }
 

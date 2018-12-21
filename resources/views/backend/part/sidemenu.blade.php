@@ -32,7 +32,6 @@
       <a class="nav-link" href="{{ url('admin') }}">
         <i class="menu-icon icon-screen-desktop"></i>
         <span class="menu-title">Dashboard</span>
-        <div class="badge badge-success">3</div>
       </a>
     </li>
     <li class="nav-item">
@@ -66,22 +65,28 @@
               <span class="menu-title">File</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url('admin/fitur-view') }}">
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/feature-view')}}">
               <i class="menu-icon icon-layers"></i>
               <span class="menu-title">Feature</span>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" href="{{url('admin/order-view')}}">
         <i class="menu-icon icon-basket"></i>
         <span class="menu-title">Order</span>
       </a>
+    </li> -->
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('admin/log-download-view')}}">
+        <i class="menu-icon icon-notebook"></i>
+        <span class="menu-title">Log Download</span>
+      </a>
     </li>
-    <li class="nav-item d-none d-md-block">
+    <!-- <li class="nav-item d-none d-md-block">
       <a class="nav-link" data-toggle="collapse" href="#log-dropdown" aria-expanded="false" aria-controls="log-dropdown">
         <i class="menu-icon icon-notebook"></i>
         <span class="menu-title">Log</span>
@@ -95,13 +100,8 @@
             <a class="nav-link" href="{{url('admin/log-view-view')}}">Log View</a>
           </li>
       </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{url('admin/fitur-view')}}">
-        <i class="menu-icon icon-layers"></i>
-        <span class="menu-title">Fitur</span>
-      </a>
-    </li>
+    </li> -->
+    
     <li class="nav-item">
       <a class="nav-link" href="{{ url('admin/logout') }}">
         <i class="menu-icon icon-power"></i>

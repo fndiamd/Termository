@@ -11,7 +11,7 @@
             <div class="col-lg-6 col-md-6">
             <div class="free-trial">
                 <h1>The best way to save and publish your files <br> With <span>Termository</span></h1>
-                <p>Free for you 15 GB Spaces</p>
+                <p>Free for you 150 MB Spaces</p>
                 <div class="trial-form">
                 <form action="{{ url('search') }}">
                     <input type="text" class="form-control" name="key" placeholder="Search files in here" required="required">
@@ -119,7 +119,7 @@
                         </div>
                         <div class="col-lg-8 col-md-8">
                             <div class="tab-info">
-                            <h2>Free 15GB space disk</h2>
+                            <h2>Free 150 MB space disk</h2>
                             <p>Free for a small teams under 5 and priced to scale with Standart or Premium plans</p>
                             </div>
                         </div>
